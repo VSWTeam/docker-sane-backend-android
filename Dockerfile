@@ -16,9 +16,8 @@ RUN apt update >/dev/null \
 RUN cd /root
 RUN curl -O https://dl.google.com/android/repository/android-ndk-r21-linux-x86_64.zip
 RUN unzip android-ndk-r21-linux-x86_64.zip
-RUN echo 'export NDK=/root/android-ndk-r21' >> ~/.bashrc
-RUN echo 'export PATH=${PATH}:$NDK' >> ~/.bashrc
-RUN sh -c "source ~/.bashrc"
+RUN export NDK=/root/android-ndk-r21
+RUN export PATH=${PATH}:$NDK
 
 # Set environment variables.
 ENV HOME /root
